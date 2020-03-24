@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://huhulaoxian.github.io/zh-cn/sitemap.xml
+Sitemap: http://huhulaoxian.github.io/zh-cn/sitemap.xml

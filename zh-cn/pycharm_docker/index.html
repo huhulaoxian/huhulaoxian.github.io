@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Pycharm远程调试Docker | 虎虎老仙</title>
+        <meta name="Description" content="如何使用Pycharm愉快的远程调试docker容器"><meta property="og:title" content="Pycharm远程调试Docker" />
+<meta property="og:description" content="如何使用Pycharm愉快的远程调试docker容器" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" />
+<meta property="article:published_time" content="2020-03-24T01:11:47+08:00" />
+<meta property="article:modified_time" content="2020-03-24T01:11:47+08:00" /><meta property="og:site_name" content="虎虎老仙" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pycharm远程调试Docker"/>
+<meta name="twitter:description" content="如何使用Pycharm愉快的远程调试docker容器"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://huhulaoxian.github.io/zh-cn/basic-markdown-preview/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.314a327b163e6b0d5ce2db67e83d0131cb84acdedde8e77d3cfba921503b70df.css" integrity="sha256-MUoyexY&#43;aw1c4ttn6D0BMcuErN7d6Od9PPupIVA7cN8=">
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pycharm远程调试Docker",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/huhulaoxian.github.io\/zh-cn\/pycharm_docker\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/huhulaoxian.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Docker, Pycharm","wordcount":  1796 ,
+        "url": "http:\/\/huhulaoxian.github.io\/zh-cn\/pycharm_docker\/","datePublished": "2020-03-24T01:11:47\x2b08:00","dateModified": "2020-03-24T01:11:47\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/huhulaoxian.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"description": "如何使用Pycharm愉快的远程调试docker容器"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="/zh-cn/">虎虎老仙</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/zh-cn/posts/">文章</a><a class="menu-item" href="/zh-cn/tags/">标签</a><a class="menu-item" href="/zh-cn/categories/">分类</a><a class="menu-item" href="/zh-cn/about/">关于</a>&nbsp;|&nbsp;
+                <span class="menu-item">
+                    <i class="fas fa-language fa-fw"></i>&nbsp;
+                    <select class="select-language" onchange="location = this.value;"><option value="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" selected>简体中文</option></select>
+                </span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="/zh-cn/">虎虎老仙</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="">文章</a><a class="menu-item" href="/zh-cn/tags/" title="">标签</a><a class="menu-item" href="/zh-cn/categories/" title="">分类</a><a class="menu-item" href="/zh-cn/about/" title="">关于</a><span class="menu-item">
+                    <i class="fas fa-language fa-fw"></i>&nbsp;
+                    <select class="select-language" onchange="location = this.value;"><option value="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" selected>简体中文</option></select>
+                </span><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Pycharm远程调试Docker</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author">
+                    <a class="author" href="/zh-cn/" rel="author" target="_blank">
+                        <i class="fas fa-user-circle fa-fw"></i>yaoting
+                    </a>
+                </span>&nbsp;<span class="post-category">收录于&nbsp;
+                            <span>
+                                <a href="/zh-cn/categories/docker">
+                                    <i class="far fa-folder fa-fw"></i>Docker
+                                </a>
+                            </span></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-24>2020-03-24</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1796 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                </details>
+            </div><div class="content" id="content"><p>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。</p>
+<p>##准备</p>
+<ul>
+<li>Ubuntu 16.04(远程服务器)</li>
+<li>Mac或Ubuntu(本地)</li>
+<li>docker(远程服务器)</li>
+<li>openssh-server(远程服务器)</li>
+<li>Pycharm profession版(本地)</li>
+<li>ssh(本地)
+##原理
+本地利用SSH链接远程服务器交互数据，Pycharm调用远程docker容器中的python编译器运行代码，并在本地显示远程结果。
+##配置流程</li>
+</ul>
+<ol>
+<li>在远程服务器创建docker container</li>
+<li>远程服务器ssh服务配置</li>
+<li>Pycharm链接远程服务器(文件同步)</li>
+<li>Pycharm链接远程的docker container (配置远程编译器)
+ 
+##一、远程服务器创建docker container
+在创建容器时需要设置端口映射，-p 本机端口：容器端口</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">docker run -id -p 8022:22 --name container_name -v 宿主机目录:容器目录 image_name:tag
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">参数解释：
+    -id：使容器退出时不会关闭，如果为-it 则退出容器后，容器会停止
+    -p ：端口映射，将容器的22端口映射到服务器的8022端口，22端口为sftp的端口，远程时必须开放22端口才能保证文件的上传下载同步
+    -v ：目录的挂载，将服务器与容器的目录同步
+</code></pre></td></tr></table>
+</div>
+</div><p>##二、 远程服务器ssh服务配置
+接下来需要配置远程服务器的ssh服务。
+###第一步，我们需要在远程服务器上安装openssh-server</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ apt update <span class="o">&amp;&amp;</span> apt install openssh-server
+</code></pre></td></tr></table>
+</div>
+</div><div class="admonition tip"><p class="admonition-title"><i class="icon fas fa-lightbulb"></i>注意</p><div class="admonition-content">这里注意，不仅仅是远程服务器上要安装ssh服务，同时远程服务器上的docker container也内也需要安装openssh-server。</div>
+        </div>
+###第二步，安装完成以后需要配置ssh服务
+~~~shell
+# 次配置在docker container中完成
+$ echo 'root:test' | chpasswd
+# 将Root的密码修改为test
+$ sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+# 允许使用root身份登录
+$ sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+$ echo "export VISIBLE=now" >> /etc/profile12345678
+~~~
+<div class="admonition warning"><p class="admonition-title"><i class="icon fas fa-exclamation-triangle"></i>注意：</p><div class="admonition-content">其实直接在容器中输入 passwd 然后输入密码即可，通常docker容器下的用户为root，其他sshd_config配置实测没有必要，可能是新版本openssh默认根用户登录</div>
+        </div>
+<p>###第三步，配置好ssh服务之后重启ssh服务</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ service ssh restart
+</code></pre></td></tr></table>
+</div>
+</div><p>###第四步，测试docker container中ssh服务端口在远程服务器上的映射</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-docker" data-lang="docker"><span class="c"># 此操作在远程服务器</span><span class="err">
+</span><span class="err"></span>$ docker port &lt;your container name&gt; <span class="m">22</span><span class="err">
+</span><span class="err"></span><span class="c"># 此操作将查看docker container中端口22，在远程服务器上端口的映射</span><span class="err">
+</span><span class="err"></span><span class="c"># 输出结果如下所示</span><span class="err">
+</span><span class="err"></span>0.0.0.0:8022<span class="err">
+</span><span class="err"></span><span class="c"># 表明只要ssh链接远程服务器的8022端口，实际是链接docker container中的22端口。</span><span class="err">
+</span></code></pre></td></tr></table>
+</div>
+</div><p>###第五步，测试是否能够使用ssh链接docker container</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ ssh root@&lt;你服务器的ip地址&gt; -p 8022 
+<span class="c1"># 密码就是刚刚重新设置的</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果能够链接成功到docker container就完成了此次ssh的配置。</p>
+<div class="admonition tip"><p class="admonition-title"><i class="icon fas fa-lightbulb"></i>注意</p><div class="admonition-content">如果失败请按以下顺序检查</div>
+        </div>
+1. ssh的端口配置是否正确？（包括服务器和docker container）
+2. 是否开启了防火墙，将端口禁用？ 
+3. 也可以运行 sudo gedit /etc/ssh/sshd_config 修改配置，保存，并重起ssh 
+~~~shell
+sudo service ssh restart
+~~~
+到这里远程的配置到一段落，接下来使用本地的pycharm操作
+Pycharm链接远程docker container(文件同步)
+***
+现在开始配置Pycharm
+###第一步，配置SFTP
+在导航栏中 Tools>Depolyment>Configuration中添加配置SFTP。
+如图
+![Local Picture](/images/Apple-Devices-Preview.png)
+添加配置SFTP，点击弹窗左上角的+号。选择SFTP，根据自己的实际情况进行配置。
+![Local Picture](/images/Apple-Devices-Preview.png)
+PS：这里的root密码就是之前设置好的test
+第三步，配置SFTP中的mapping
+都配置完之后。打开自动上传功能
+Tools>Depolyment>Automatic Upload(always)
+本地修改好代码只要按保存键就自动将本地代码上传至远程docker container中。
+到这里已经配置好代码的自动同步了。还差最后一步，远程调试就配置成功。
+Pycharm链接远程docker container (配置远程编译器)
+打开Pycharm专业版的配置
+添加新编译器(远程docker container编译器)
+在打开的页面选择之前配置好的SFTP
+PS：
+通常选择完之后羡慕有两个选项
+Create: 新建SFTP
+Move: 将选择的SFTP作为编译器的SFTP
+通常选择Move就好
+<p>最后配置docker container的编译器位置，还有项目位置的映射。
+完成这一步就彻底搞定Pycharm远程调试Docker container
+只要在调试的时候，选择新建的远程调试编译器就好</p>
+<p>本文参考至：
+<a href="https://zhuanlan.zhihu.com/p/52827335" target="_blank" rel="noopener noreffer">PyCharm+Docker：打造最舒适的深度学习炼丹炉</a>
+
+<a href="https://www.cnblogs.com/ruiyang-/p/10158658.html" target="_blank" rel="noopener noreffer">pycharm远程调试docker containers</a>
+</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-24 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="http://huhulaoxian.github.io/zh-cn/pycharm_docker/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" data-title="Pycharm远程调试Docker" data-via="xxxx" data-hashtags="Docker,Pycharm"><i class="fab fa-twitter fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" data-hashtag="Docker"><i class="fab fa-facebook-square fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" data-title="Pycharm远程调试Docker" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/"><i class="fab fa-renren fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" data-title="Pycharm远程调试Docker"><i class="loveit it-baidu-fill"></i>
+</a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://huhulaoxian.github.io/zh-cn/pycharm_docker/" data-title="Pycharm远程调试Docker"><i class="fab fa-evernote fa-fw"></i>
+</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><span>
+                        <a href="/zh-cn/tags/docker">
+                            <i class="fas fa-tag fa-fw"></i>Docker
+                        </a>
+                    </span>&nbsp;<span>
+                        <a href="/zh-cn/tags/pycharm">
+                            <i class="fas fa-tag fa-fw"></i>Pycharm
+                        </a>
+                    </span>&nbsp;</section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="http://huhulaoxian.github.io/zh-cn/basic-markdown-preview/" class="prev" rel="prev" title="Markdown 基本语法预览"><i class="fas fa-angle-left fa-fw"></i>Markdown 基本语法预览</a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">虎虎老仙</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <span>&nbsp;</span>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },]
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/iconfont/iconfont.min.87733e31cc299c77d28479c59ca286e921fa964f11356559e96012b783b7bb29.css" integrity="sha256-h3M&#43;McwpnHfShHnFnKKG6SH6lk8RNWVZ6WASt4O3uyk="><link rel="stylesheet" href="/lib/katex/katex.min.57c495d8c3b51546fadc1c21b795b1f71e8f54735ad3682ff01807fee1f7ba78.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script></body>
+</html>

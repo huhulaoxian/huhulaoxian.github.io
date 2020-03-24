@@ -2,22 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 虎虎老仙</title>
-    <link>https://huhulaoxian.github.io/zh-cn/posts/</link>
+    <link>http://huhulaoxian.github.io/zh-cn/posts/</link>
     <description>Recent content in Posts on 虎虎老仙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 25 Aug 2019 16:22:42 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 01:11:47 +0800</lastBuildDate>
     
-	<atom:link href="https://huhulaoxian.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://huhulaoxian.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Pycharm远程调试Docker</title>
+      <link>http://huhulaoxian.github.io/zh-cn/pycharm_docker/</link>
+      <pubDate>Tue, 24 Mar 2020 01:11:47 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/zh-cn/pycharm_docker/</guid>
+      <description>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。 ##准备 Ubuntu 16.04(远程服务器) Mac或Ubuntu(本地) docker(</description>
+    </item>
+    
+    <item>
       <title>Markdown 基本语法预览</title>
-      <link>https://huhulaoxian.github.io/zh-cn/basic-markdown-preview/</link>
+      <link>http://huhulaoxian.github.io/zh-cn/basic-markdown-preview/</link>
       <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
       
-      <guid>https://huhulaoxian.github.io/zh-cn/basic-markdown-preview/</guid>
+      <guid>http://huhulaoxian.github.io/zh-cn/basic-markdown-preview/</guid>
       <description>&lt;p&gt;这是一篇用于预览 :(fab fa-markdown): Markdown 基本语法的文章。&lt;/p&gt;
 &lt;p&gt;文章内容基于 &lt;a href=&#34;https://github.github.com/gfm&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;GitHub Flavored Markdown Spec&lt;/a&gt;
 。&lt;/p&gt;
