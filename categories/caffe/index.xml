@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 20:33:55 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 20:34:00 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/categories/caffe/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Caffe_gpu</title>
+      <link>http://huhulaoxian.github.io/caffe_gpu/</link>
+      <pubDate>Tue, 24 Mar 2020 20:34:00 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/caffe_gpu/</guid>
+      <description>&lt;p&gt;GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教程，然后再编译gpu版本，会轻松一点。&lt;a href=&#34;https://huhulaoxian.xyz/caffe_cpu/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Caffe(cpu版) Ubuntu安装&lt;/a&gt;
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Caffe(cpu) ubuntu安装</title>
