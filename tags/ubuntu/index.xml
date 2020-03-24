@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 17:01:38 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 20:33:55 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Caffe(cpu) ubuntu安装</title>
+      <link>http://huhulaoxian.github.io/caffe_cpu/</link>
+      <pubDate>Tue, 24 Mar 2020 20:33:55 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/caffe_cpu/</guid>
+      <description>&lt;p&gt;如果科研过程中需要用到前辈的caffe框架的源码，一定需要重新编译源码中的caffe框架，通常只要作者开放源码，其中一定会包含他们编译修改过的caffe文件。所以caffe框架的安装将是整个复现过程中最难的部分。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Conda的常用命令</title>

@@ -1,4 +1,4 @@
-# 关于 LoveIt
+# 关于 我
 
 
 [LoveIt :(far fa-heart):](https://github.com/dillonzq/LoveIt) 是一个由 [Dillon](https://dillonzq.com) 开发的**简洁**、**优雅**且**高效**的 [Hugo](https://gohugo.io/) 博客主题。
@@ -57,7 +57,6 @@
 LoveIt 根据 MIT 许可协议授权。
 
 更多信息请查看 [LICENSE 文件](https://github.com/dillonzq/LoveIt/blob/master/LICENSE)。
-
 感谢以下在主题中使用过的项目的作者：
 
 * [Font Awesome](https://fontawesome.com/)

@@ -9,7 +9,7 @@ conda的默认下载源服务器应该在国外，在线安装包有时会很慢
 vi ~/.condarc
 ~~~
 将以下内容写入`.condarc`文件中
-~~~.condarc
+~~~condarc
 channels:
   - defaults
 show_channel_urls: true
