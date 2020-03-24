@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 虎虎老仙</title>
+    <link>http://huhulaoxian.github.io/posts/</link>
+    <description>Recent content in Posts on 虎虎老仙</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 24 Mar 2020 17:01:38 +0800</lastBuildDate>
+    
+	<atom:link href="http://huhulaoxian.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conda的常用命令</title>
+      <link>http://huhulaoxian.github.io/conda_base/</link>
+      <pubDate>Tue, 24 Mar 2020 17:01:38 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/conda_base/</guid>
+      <description>&lt;p&gt;本文介绍了conda的基本操作命令，conda的api写的非常完整，有不明白的命令，直接在终端输入&lt;code&gt;conda &#39;command&#39; --help&lt;/code&gt;就能看到该命令的详细介绍&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conda更换清华镜像</title>
+      <link>http://huhulaoxian.github.io/conda_source/</link>
+      <pubDate>Tue, 24 Mar 2020 16:50:48 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/conda_source/</guid>
+      <description>&lt;p&gt;conda的默认下载源服务器应该在国外，在线安装包有时会很慢，换成清华的镜像会好很多，换源的方法&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;清华镜像源官网&lt;/a&gt;
+写的非常清楚&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下Nvidia显卡驱动安装</title>
+      <link>http://huhulaoxian.github.io/nvidia_driver/</link>
+      <pubDate>Tue, 24 Mar 2020 13:47:07 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/nvidia_driver/</guid>
+      <description>&lt;p&gt;本文介绍了ubuntu通过英伟达官网安装显卡驱动的方法，当然也可以使用ubuntu图形界面中的“软件和更新”进行安装，但是不推荐&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>win10 &#43; ubuntu双系统安装注意事项</title>
+      <link>http://huhulaoxian.github.io/ubuntu_install/</link>
+      <pubDate>Tue, 24 Mar 2020 13:39:14 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/ubuntu_install/</guid>
+      <description>&lt;p&gt;本文记录了 win10 安装 ubuntu 双系统的注意事项,主要针对以UEFI方式启动系统的电脑。关于UEFI和EFI自己查询&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker常用命令及注意事项</title>
+      <link>http://huhulaoxian.github.io/docker_command/</link>
+      <pubDate>Tue, 24 Mar 2020 11:59:49 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/docker_command/</guid>
+      <description>&lt;p&gt;本文介绍了Docker的常用命令，以及注意事项，可能会不断更新&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pycharm远程调试Docker</title>
+      <link>http://huhulaoxian.github.io/pycharm_docker/</link>
+      <pubDate>Tue, 24 Mar 2020 01:11:47 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/pycharm_docker/</guid>
+      <description>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。 准备 Ubuntu 16.04(远程服务器) Mac或Ubuntu(本地) docker(远程</description>
+    </item>
+    
+    <item>
+      <title>Markdown 基本语法预览</title>
+      <link>http://huhulaoxian.github.io/basic-markdown-preview/</link>
+      <pubDate>Sun, 25 Aug 2019 16:22:42 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/basic-markdown-preview/</guid>
+      <description>&lt;p&gt;这是一篇用于预览 :(fab fa-markdown): Markdown 基本语法的文章。&lt;/p&gt;
+&lt;p&gt;文章内容基于 &lt;a href=&#34;https://github.github.com/gfm&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;GitHub Flavored Markdown Spec&lt;/a&gt;
+。&lt;/p&gt;
+&lt;p&gt;不包含复杂的规则说明，仅仅展示 GFM 所约定的 Markdown 基本语法。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

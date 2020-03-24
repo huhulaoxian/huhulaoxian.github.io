@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Docker常用命令及注意事项 | 虎虎老仙</title>
+        <meta name="Description" content="本文介绍了Docker的常用命令，以及注意事项，不断更新"><meta property="og:title" content="Docker常用命令及注意事项" />
+<meta property="og:description" content="本文介绍了Docker的常用命令，以及注意事项，不断更新" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://huhulaoxian.github.io/docker_command/" />
+<meta property="article:published_time" content="2020-03-24T11:59:49+08:00" />
+<meta property="article:modified_time" content="2020-03-24T11:59:49+08:00" /><meta property="og:site_name" content="虎虎老仙" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker常用命令及注意事项"/>
+<meta name="twitter:description" content="本文介绍了Docker的常用命令，以及注意事项，不断更新"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="http://huhulaoxian.github.io/docker_command/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="http://huhulaoxian.github.io/pycharm_docker/" /><link rel="next" href="http://huhulaoxian.github.io/ubuntu_install/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.314a327b163e6b0d5ce2db67e83d0131cb84acdedde8e77d3cfba921503b70df.css" integrity="sha256-MUoyexY&#43;aw1c4ttn6D0BMcuErN7d6Od9PPupIVA7cN8=">
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Docker常用命令及注意事项",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/huhulaoxian.github.io\/docker_command\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "http:\/\/huhulaoxian.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Docker","wordcount":  935 ,
+        "url": "http:\/\/huhulaoxian.github.io\/docker_command\/","datePublished": "2020-03-24T11:59:49\x2b08:00","dateModified": "2020-03-24T11:59:49\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/huhulaoxian.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"description": "本文介绍了Docker的常用命令，以及注意事项，不断更新"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="/">虎虎老仙</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/">文章</a><a class="menu-item" href="/tags/">标签</a><a class="menu-item" href="/categories/">分类</a><a class="menu-item" href="/about/">关于</a><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="/">虎虎老仙</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Docker常用命令及注意事项</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author">
+                    <a class="author" href="/" rel="author" target="_blank">
+                        <i class="fas fa-user-circle fa-fw"></i>虎虎老仙
+                    </a>
+                </span>&nbsp;<span class="post-category">收录于&nbsp;
+                            <span>
+                                <a href="/categories/docker">
+                                    <i class="far fa-folder fa-fw"></i>Docker
+                                </a>
+                            </span></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-24>2020-03-24</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 935 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#docker的常用命令">Docker的常用命令</a>
+      <ul>
+        <li><a href="#服务相关">服务相关：</a></li>
+        <li><a href="#镜像相关">镜像相关：</a></li>
+        <li><a href="#容器相关">容器相关：</a></li>
+        <li><a href="#数据卷相关">数据卷相关：</a></li>
+        <li><a href="#镜像制作">镜像制作：</a></li>
+      </ul>
+    </li>
+    <li><a href="#常见问题">常见问题：</a>
+      <ul>
+        <li><a href="#1-在容器中执行apt-update的时候可能会出现0-working-的问题">1. 在容器中执行apt update的时候可能会出现0% working 的问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>本文介绍了Docker的常用命令，以及注意事项，可能会不断更新</p>
+<h2 id="docker的常用命令">Docker的常用命令</h2>
+<h3 id="服务相关">服务相关：</h3>
+<ul>
+<li>启动</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl start docker
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>停止</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl stop docker
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看状态</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl status docker
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>重启</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl restart docker
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>设置开机启动</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable docker
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="镜像相关">镜像相关：</h3>
+<ul>
+<li>查看镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker images
+</code></pre></td></tr></table>
+</div>
+</div><p>列出所有镜像的id</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker images -q
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>搜索镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker search image_ name
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>拉取镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker pull image_name 
+# 指定版本号
+docker pull image_name:version 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>删除镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker rmi image_name or image_id
+</code></pre></td></tr></table>
+</div>
+</div><div class="admonition warning"><p class="admonition-title"><i class="icon fas fa-exclamation-triangle"></i>注意：</p><div class="admonition-content">最好使用 <code>image_name：tag</code> 的形式,否则会存在子镜像依赖的情况，导致删除不了。</div>
+        </div>
+<h3 id="容器相关">容器相关：</h3>
+<ul>
+<li>查看正在运行的容器</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker ps
+# 查看所有容器
+docker ps -a
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>创建</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it or -id --name container_name image_name:version /bin/bash
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">-it:交互式容器，退出容器后容器自动关闭。t：分配一个伪终端
+-id：守护式容器，退出容器后容器不会关闭
+-p：开放端口 通常 8022:22 意为将容器的22号端口与服务器8022端口绑定
+/ bin/bash: 直接进入容器
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>进入</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># 退出终端后不会停止容器：
+docker exec container_name or id
+# 退出容器后容器会停止：
+docker attach container_name or id
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>启动</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker start  container_name or id
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>停止</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker stop container_name or id
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>删除</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker rm container_name or id
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查看容器信息</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker inspect container_name or id 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="数据卷相关">数据卷相关：</h3>
+<ul>
+<li>创建容器时，使用-v参数设置数据卷</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker run -it --name container_name -v 宿主机目录：容器目录 image_name
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>注意事项
+a. 目录必须是绝对路径
+b. 如果目录不存在会自动创建
+c. 可以挂载多个数据卷
+d. 一个数据卷也可以被多个容器挂载</li>
+</ul>
+<h3 id="镜像制作">镜像制作：</h3>
+<ul>
+<li>容器转镜像，数据卷挂载的数据不会被打包，其余文件都会</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker commit 容器id  镜像名称:版本号
+docker save -o 压缩文件名称 镜像名称:版本号
+docker save 镜像名称:版本号 -o /home/myubuntu-save-1204.tar
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>加载保存的镜像:</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker load -i压缩文件名称 
+docker load -i /home/myubuntu-save-1204.tar
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>dockerfile制作镜像</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker build -f dockerfile_path -t image_name 
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">-f:指定dockerfile路径
+-t:指定新的镜像名字
+ .:上下文路径。
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>由于 docker 的运行模式是 C/S。我们本机是 C，docker 引擎是 S。实际的构建过程是在 docker 引擎下完成的，所以这个时候无法用到我们本机的文件。这就需要把我们本机的指定目录下的文件一起打包提供给 docker 引擎使用。如果未说明最后一个参数，那么默认上下文路径就是 Dockerfile 所在的位置。</li>
+</ul>
+<p> </p>
+<h2 id="常见问题">常见问题：</h2>
+<h3 id="1-在容器中执行apt-update的时候可能会出现0-working-的问题">1. 在容器中执行apt update的时候可能会出现0% working 的问题</h3>
+<p>”这里不是源的问题，因为容器环境太过纯净，这里需要安装apt-transport-https这个deb文件，下载的时候也要注意不要下载最新的版本，否则也会出现依赖问题，要下载和当前docker容器内的apt相匹配的版本。“</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-24 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="http://huhulaoxian.github.io/docker_command/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://huhulaoxian.github.io/docker_command/" data-title="Docker常用命令及注意事项" data-via="xxxx" data-hashtags="Docker"><i class="fab fa-twitter fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://huhulaoxian.github.io/docker_command/" data-hashtag="Docker"><i class="fab fa-facebook-square fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://huhulaoxian.github.io/docker_command/" data-title="Docker常用命令及注意事项" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="http://huhulaoxian.github.io/docker_command/"><i class="fab fa-renren fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://huhulaoxian.github.io/docker_command/" data-title="Docker常用命令及注意事项"><i class="loveit it-baidu-fill"></i>
+</a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://huhulaoxian.github.io/docker_command/" data-title="Docker常用命令及注意事项"><i class="fab fa-evernote fa-fw"></i>
+</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><span>
+                        <a href="/tags/docker">
+                            <i class="fas fa-tag fa-fw"></i>Docker
+                        </a>
+                    </span>&nbsp;</section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="http://huhulaoxian.github.io/pycharm_docker/" class="prev" rel="prev" title="Pycharm远程调试Docker"><i class="fas fa-angle-left fa-fw"></i>Pycharm远程调试Docker</a>
+            <a href="http://huhulaoxian.github.io/ubuntu_install/" class="next" rel="next" title="win10 &#43; ubuntu双系统安装注意事项">win10 &#43; ubuntu双系统安装注意事项<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">虎虎老仙</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <span>&nbsp;</span>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },]
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/iconfont/iconfont.min.87733e31cc299c77d28479c59ca286e921fa964f11356559e96012b783b7bb29.css" integrity="sha256-h3M&#43;McwpnHfShHnFnKKG6SH6lk8RNWVZ6WASt4O3uyk="><link rel="stylesheet" href="/lib/katex/katex.min.57c495d8c3b51546fadc1c21b795b1f71e8f54735ad3682ff01807fee1f7ba78.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script></body>
+</html>
