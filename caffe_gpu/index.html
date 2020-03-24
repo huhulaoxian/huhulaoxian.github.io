@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Caffe_gpu | 虎虎老仙</title>
-        <meta name="Description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"><meta property="og:title" content="Caffe_gpu" />
+        <title>Caffe(cpu) ubuntu安装 | 虎虎老仙</title>
+        <meta name="Description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"><meta property="og:title" content="Caffe(cpu) ubuntu安装" />
 <meta property="og:description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://huhulaoxian.github.io/caffe_gpu/" />
 <meta property="article:published_time" content="2020-03-24T20:34:00+08:00" />
 <meta property="article:modified_time" content="2020-03-24T20:34:00+08:00" /><meta property="og:site_name" content="虎虎老仙" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Caffe_gpu"/>
+<meta name="twitter:title" content="Caffe(cpu) ubuntu安装"/>
 <meta name="twitter:description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
@@ -28,7 +28,7 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Caffe_gpu",
+        "headline": "Caffe(cpu) ubuntu安装",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/huhulaoxian.github.io\/caffe_gpu\/"
@@ -37,7 +37,7 @@
                 "url": "http:\/\/huhulaoxian.github.io\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  1567 ,
+            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  1621 ,
         "url": "http:\/\/huhulaoxian.github.io\/caffe_gpu\/","datePublished": "2020-03-24T20:34:00\x2b08:00","dateModified": "2020-03-24T20:34:00\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -87,7 +87,7 @@
     window.mobileHeaderMode = "auto";
 </script>
 <main class="main">
-                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Caffe_gpu</h1><div class="post-meta">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Caffe(cpu) ubuntu安装</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author">
                     <a class="author" href="/" rel="author" target="_blank">
                         <i class="fas fa-user-circle fa-fw"></i>虎虎老仙
@@ -99,7 +99,7 @@
                                 </a>
                             </span></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-24>2020-03-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 1567 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1621 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 4 分钟&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">目录</h2>
@@ -125,6 +125,8 @@
     </li>
     <li><a href="#安装cudnn">安装cudnn</a></li>
     <li><a href="#配置makefileconfig">配置makefile.config</a></li>
+    <li><a href="#编辑makefile文件">编辑Makefile文件</a></li>
+    <li><a href="#编辑host_configh文件">编辑host_config.h文件</a></li>
     <li><a href="#make编译caffe">make编译caffe</a></li>
     <li><a href="#编译python接口使用python调用caffe框架">编译python接口（使用python调用caffe框架）</a></li>
     <li><a href="#导入caffe">导入caffe</a></li>
@@ -142,7 +144,16 @@
 中的方法正确安装驱动，此处不具体介绍。</p>
 <h2 id="安装cuda">安装cuda</h2>
 <p>caffe官方推荐ubuntu16.04安装cuda8.0，英伟达cuda官网下载8.0版本
-![/images/caffe_gpu/1.png]
+<figure><a class="lightgallery" href="/images/caffe_gpu/1.png" title="cuda" data-thumbnail="/images/caffe_gpu/1.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-sizes="auto"
+            data-srcset="/images/caffe_gpu/1.png, /images/caffe_gpu/1.png 1.5x, /images/caffe_gpu/1.png 2x"
+            data-src="/images/caffe_gpu/1.png"
+            alt="cuda" />
+    </a><figcaption class="image-caption">cuda</figcaption></figure>
+
 使用 <code>chmod</code> 修改文件读写权限</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -178,12 +189,19 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
-</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="s2">/usr/local/cuda-8.0/bin:</span><span class="nv">$PATH</span><span class="s2">&#34;</span>
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="s2">/usr/local/cuda8.0/lib64:</span><span class="nv">$LD_LIBRARY_PATH</span><span class="s2">&#34;</span>
-<span class="nb">source</span> ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div><p>更新以下环境变量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">source</span> ~/.bashrc
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="测试cuda的samples">测试CUDA的samples</h3>
@@ -194,9 +212,9 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="m">1</span> <span class="nb">cd</span> /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
-<span class="m">2</span> make
-<span class="m">3</span> sudo ./deviceQuery
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
+make
+sudo ./deviceQuery
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="安装cudnn">安装cudnn</h2>
@@ -233,7 +251,16 @@ sudo ln -sf libcudnn.so.6 libcudnn.so <span class="c1">#生成软链接</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>安装完成后可用 <code>nvcc -V</code> 命令验证是否安装成功，若出现以下信息则表示安装成功：
-![/images/caffe_gpu/1.png]</p>
+<figure><a class="lightgallery" href="/images/caffe_gpu/2.png" title="nvcc" data-thumbnail="/images/caffe_gpu/2.png">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-sizes="auto"
+            data-srcset="/images/caffe_gpu/2.png, /images/caffe_gpu/2.png 1.5x, /images/caffe_gpu/2.png 2x"
+            data-src="/images/caffe_gpu/2.png"
+            alt="nvcc" />
+    </a><figcaption class="image-caption">nvcc</figcaption></figure>
+</p>
 <h2 id="配置makefileconfig">配置makefile.config</h2>
 <p>将<code>makefile.config</code>文件中的以下内容解除注释并按自己的路径配置即可</p>
 <ul>
@@ -288,20 +315,17 @@ PYTHON_INCLUDE :<span class="o">=</span> <span class="k">$(</span>ANACONDA_HOME<
 LIBRARY_DIRS :<span class="o">=</span> <span class="k">$(</span>PYTHON_LIB<span class="k">)</span> /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial 
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>caffe下的Makefile修改地方</li>
-</ul>
+</div><h2 id="编辑makefile文件">编辑Makefile文件</h2>
+<p>很多教程都没有这一步，甚至是官方文档，也许这也是caffe较难安装的原因吧。</p>
 <p>将：<code>LIBRARIES += glog gflags protobuf boost_system boost_filesystem m</code><br>
 改为：
 <code>LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial</code><br>
 将：
-<code>NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)</code>
+<code>NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)</code><br>
 替换为：
 <code>NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)</code></p>
-<ul>
-<li>编辑<code>/usr/local/cuda/include/host_config.h</code>
-将其中的第115行注释掉：</li>
-</ul>
+<h2 id="编辑host_configh文件">编辑<code>host_config.h</code>文件</h2>
+<p>编辑<code>/usr/local/cuda/include/host_config.h</code>,将其中的第115行注释掉：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -447,12 +471,12 @@ make runtest
                             <a class="link-to-markdown" href="http://huhulaoxian.github.io/caffe_gpu/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe_gpu" data-via="xxxx" data-hashtags="ubuntu,Caffe"><i class="fab fa-twitter fa-fw"></i>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe(cpu) ubuntu安装" data-via="xxxx" data-hashtags="ubuntu,Caffe"><i class="fab fa-twitter fa-fw"></i>
 </a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-hashtag="ubuntu"><i class="fab fa-facebook-square fa-fw"></i>
-</a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe_gpu" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe(cpu) ubuntu安装" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i>
 </a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="http://huhulaoxian.github.io/caffe_gpu/"><i class="fab fa-renren fa-fw"></i>
-</a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe_gpu"><i class="loveit it-baidu-fill"></i>
-</a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe_gpu"><i class="fab fa-evernote fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe(cpu) ubuntu安装"><i class="loveit it-baidu-fill"></i>
+</a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="http://huhulaoxian.github.io/caffe_gpu/" data-title="Caffe(cpu) ubuntu安装"><i class="fab fa-evernote fa-fw"></i>
 </a></span>
             </div>
         </div>
@@ -488,6 +512,18 @@ make runtest
             <span>&nbsp;</span>
         </a><script>
         document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
             renderMathInElement(document.body, {
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
@@ -495,5 +531,5 @@ make runtest
                     { left: '\\(', right: '\\)', display: false },]
             });
         });
-    </script><link rel="stylesheet" href="/lib/iconfont/iconfont.min.87733e31cc299c77d28479c59ca286e921fa964f11356559e96012b783b7bb29.css" integrity="sha256-h3M&#43;McwpnHfShHnFnKKG6SH6lk8RNWVZ6WASt4O3uyk="><link rel="stylesheet" href="/lib/katex/katex.min.57c495d8c3b51546fadc1c21b795b1f71e8f54735ad3682ff01807fee1f7ba78.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script></body>
+    </script><link rel="stylesheet" href="/lib/iconfont/iconfont.min.87733e31cc299c77d28479c59ca286e921fa964f11356559e96012b783b7bb29.css" integrity="sha256-h3M&#43;McwpnHfShHnFnKKG6SH6lk8RNWVZ6WASt4O3uyk="><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.a0f67639490aba5d9a250783c0aa0ed69f83a6f151fb0d7b9fb617c9dbc54565.css" integrity="sha256-oPZ2OUkKul2aJQeDwKoO1p&#43;DpvFR&#43;w17n7YXydvFRWU="><link rel="stylesheet" href="/lib/katex/katex.min.57c495d8c3b51546fadc1c21b795b1f71e8f54735ad3682ff01807fee1f7ba78.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/lazysizes/lazysizes.min.876b4c12685e991d88378c1b6dd3638fd2da0c88f3c24da1ada950c1f26604e1.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE="></script><script src="/lib/lightgallery/lightgallery.min.7a84c63ab156d68e4a7269487c9c65a4eb34b0c7864f2d3fd2b87f7c664480d3.js" integrity="sha256-eoTGOrFW1o5KcmlIfJxlpOs0sMeGTy0/0rh/fGZEgNM="></script><script src="/lib/lightgallery/lg-thumbnail.min.eab31af8f90835b7ab674b2dd2474841039bc01022aa312f80dde6e22fde58d7.js" integrity="sha256-6rMa&#43;PkINberZ0st0kdIQQObwBAiqjEvgN3m4i/eWNc="></script><script src="/lib/lightgallery/lg-zoom.min.e3a7e6bb4a69f8627654ba9e0ab1252971bcfb400538dbb0605db9a3342ce5b9.js" integrity="sha256-46fmu0pp&#43;GJ2VLqeCrElKXG8&#43;0AFONuwYF25ozQs5bk="></script><script src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script></body>
 </html>

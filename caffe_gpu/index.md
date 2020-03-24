@@ -1,4 +1,4 @@
-# Caffe_gpu
+# Caffe(cpu) ubuntu安装
 
 GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教程，然后再编译gpu版本，会轻松一点。[Caffe(cpu版) Ubuntu安装](https://huhulaoxian.xyz/caffe_cpu/)
 <!--more-->
@@ -10,7 +10,7 @@ GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教
 不推荐以上方法安装，ubuntu推荐的显卡驱动并不是最新版，后续安装cuda或其他框架时会对显卡驱动版本有要求，所以推荐使用[这篇文章](https://huhulaoxian.xyz/nvidia_driver/)中的方法正确安装驱动，此处不具体介绍。
 ## 安装cuda
 caffe官方推荐ubuntu16.04安装cuda8.0，英伟达cuda官网下载8.0版本
-![/images/caffe_gpu/1.png]
+![cuda](/images/caffe_gpu/1.png)
 使用 `chmod` 修改文件读写权限
 ~~~shell
 sudo chmod 777 cuda_8.0.44_linux.run
@@ -29,13 +29,16 @@ sudo gedit ~/.bashrc 
 ~~~shell
 export PATH="/usr/local/cuda-8.0/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda8.0/lib64:$LD_LIBRARY_PATH"
+~~~
+更新以下环境变量
+~~~shell
 source ~/.bashrc
 ~~~
 ### 测试CUDA的samples
 ~~~shell
-1 cd /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
-2 make
-3 sudo ./deviceQuery
+cd /usr/local/cuda-8.0/samples/1_Utilities/deviceQuery
+make
+sudo ./deviceQuery
 ~~~
 ## 安装cudnn
 caffe官方推荐cudnn(v6)对应cuda8.0版本
@@ -55,7 +58,7 @@ sudo ln -sf libcudnn.so.6.0.21 libcudnn.so.6 #生成软衔接
 sudo ln -sf libcudnn.so.6 libcudnn.so #生成软链接
 ~~~
 安装完成后可用 `nvcc -V` 命令验证是否安装成功，若出现以下信息则表示安装成功：
-![/images/caffe_gpu/1.png]
+![nvcc](/images/caffe_gpu/2.png)
 
 ## 配置makefile.config
 将`makefile.config`文件中的以下内容解除注释并按自己的路径配置即可
@@ -79,18 +82,19 @@ PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
  INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial 
 ~~~
-* caffe下的Makefile修改地方
+## 编辑Makefile文件
+很多教程都没有这一步，甚至是官方文档，也许这也是caffe较难安装的原因吧。
   
 将：`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`  
 改为：
 `LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial`  
 将：
-`NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)` 
+`NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)`  
 替换为： 
 `NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)`
 
-* 编辑`/usr/local/cuda/include/host_config.h`
-将其中的第115行注释掉：
+## 编辑`host_config.h`文件
+编辑`/usr/local/cuda/include/host_config.h`,将其中的第115行注释掉：
 ~~~shell
 #error– unsupported GNU version! gcc versions later than 4.9 are not supported!
 ~~~
