@@ -7,19 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 13:47:07 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 13:39:14 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/zh-cn/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Ubuntu下Nvidia显卡驱动安装</title>
-      <link>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</link>
-      <pubDate>Tue, 24 Mar 2020 13:47:07 +0800</pubDate>
-      
-      <guid>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</guid>
-      <description>&lt;p&gt;本文介绍了ubuntu通过英伟达官网安装显卡驱动的方法，当然也可以使用ubuntu图形界面中的“软件和更新”进行安装，但是不推荐&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>win10 &#43; ubuntu双系统安装注意事项</title>
