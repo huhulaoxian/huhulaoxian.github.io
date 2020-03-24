@@ -38,6 +38,7 @@ $ apt update && apt install openssh-server
 {{% admonition "tip" "注意" %}}
 这里注意，不仅仅是远程服务器上要安装ssh服务，同时远程服务器上的docker container也内也需要安装openssh-server。
 {{% /admonition %}}
+
 ### 第二步，安装完成以后需要配置ssh服务
 ~~~shell
 # 次配置在docker container中完成
@@ -65,7 +66,7 @@ $ docker port <your container name> 22
 0.0.0.0:8022
 # 表明只要ssh链接远程服务器的8022端口，实际是链接docker container中的22端口。
 ~~~
-###第五步，测试是否能够使用ssh链接docker container
+### 第五步，测试是否能够使用ssh链接docker container
 ~~~shell
 $ ssh root@<你服务器的ip地址> -p 8022
 # 密码就是刚刚重新设置的
@@ -74,6 +75,7 @@ $ ssh root@<你服务器的ip地址> -p 8022
 {{% admonition "tip" "注意" %}}
 如果失败请按以下顺序检查
 {{% /admonition %}}
+
 1. ssh的端口配置是否正确？（包括服务器和docker container）
 2. 是否开启了防火墙，将端口禁用？ 
 3. 也可以运行 sudo gedit /etc/ssh/sshd_config 修改配置，保存，并重起ssh 
@@ -82,8 +84,10 @@ sudo service ssh restart
 ~~~
 到这里远程的配置到一段落，接下来使用本地的pycharm操作
 Pycharm链接远程docker container(文件同步)
+
 ***
-现在开始配置Pycharm
+
+## 配置Pycharm
 ### 配置SFTP
 在导航栏中 Tools>Depolyment>Configuration中添加配置SFTP。
 如图
