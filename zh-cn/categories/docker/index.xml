@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 01:11:47 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 11:59:49 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/zh-cn/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker常用命令及注意事项</title>
+      <link>http://huhulaoxian.github.io/zh-cn/docker_command/</link>
+      <pubDate>Tue, 24 Mar 2020 11:59:49 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/zh-cn/docker_command/</guid>
+      <description>Docker的常用命令 服务相关： 启动 1 systemctl start docker 停止 1 systemctl stop docker 查看状态 1 systemctl status docker 重启 1 systemctl restart docker 设置开机启动 1 systemctl enable docker 镜像相关： 查看镜像 1 docker images 列出所有镜像</description>
+    </item>
     
     <item>
       <title>Pycharm远程调试Docker</title>
