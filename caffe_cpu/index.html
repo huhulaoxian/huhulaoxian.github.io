@@ -37,7 +37,7 @@
                 "url": "http:\/\/huhulaoxian.github.io\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  887 ,
+            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  873 ,
         "url": "http:\/\/huhulaoxian.github.io\/caffe_cpu\/","datePublished": "2020-03-24T20:33:55\x2b08:00","dateModified": "2020-03-24T20:33:55\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -99,7 +99,7 @@
                                 </a>
                             </span></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-24>2020-03-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 887 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 873 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">目录</h2>
@@ -121,6 +121,8 @@
     <li><a href="#make编译caffe">make编译caffe</a></li>
     <li><a href="#编译python接口使用python调用caffe框架">编译python接口（使用python调用caffe框架）</a></li>
     <li><a href="#导入caffe">导入caffe</a></li>
+    <li><a href="#mnist数据集测试">MNIST数据集测试</a></li>
+    <li><a href="#结尾">结尾</a></li>
   </ul>
 </nav></div>
                 </details>
@@ -244,35 +246,73 @@ make runtest
 </div>
 </div><div class="admonition tip"><p class="admonition-title"><i class="icon fas fa-lightbulb"></i>小贴士</p><div class="admonition-content">vim编辑器用不习惯的话，可以使用<code>gedit</code>编辑器</div>
         </div>
-最后一行加上
-~~~
-export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
-~~~
-这里的路径写上你自己的路径
-然后更新以下`bashrc`
-~~~shell
-source ~/.bashrc
-~~~
-## MNIST数据集测试
-配置caffe完成后，我们可以利用MNIST数据集对caffe进行测试，过程如下：
-1. 将终端定位到Caffe根目录（一定要在caffa的根目录下执行以下命令，否则会出现有些文件找不到的情况）
-~~~
-cd ~/caffe
-~~~
-2. 下载MNIST数据库并解压缩
-~~~
-./data/mnist/get_mnist.sh
-~~~
-3. 将其转换成Lmdb数据库格式
-~~~
-./examples/mnist/create_mnist.sh
-~~~
-4. 训练网络
-~~~
-./examples/mnist/train_lenet.sh
-~~~
-## 结尾
-cpu版本的版本的caffe安装相对简单，建议操作完本文的安装方式以后再尝试安装gpu版本的caffe</div><div class="post-footer" id="post-footer">
+<p>最后一行加上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">export PYTHONPATH=&#34;/home/yaoting/caffe/python:$PYTHONPATH&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>这里的路径写上你自己的路径
+然后更新以下<code>bashrc</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">source</span> ~/.bashrc
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mnist数据集测试">MNIST数据集测试</h2>
+<p>配置caffe完成后，我们可以利用MNIST数据集对caffe进行测试，过程如下：</p>
+<ol>
+<li>将终端定位到Caffe根目录（一定要在caffa的根目录下执行以下命令，否则会出现有些文件找不到的情况）</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd ~/caffe
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>下载MNIST数据库并解压缩</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./data/mnist/get_mnist.sh
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>将其转换成Lmdb数据库格式</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./examples/mnist/create_mnist.sh
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>训练网络</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">./examples/mnist/train_lenet.sh
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="结尾">结尾</h2>
+<p>cpu版本的版本的caffe安装相对简单，建议操作完本文的安装方式以后再尝试安装gpu版本的caffe</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

@@ -2,24 +2,24 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://huhulaoxian.github.io/tags/caffe/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/categories/caffe/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://huhulaoxian.github.io/tags/caffe/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/caffe_cpu/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/categories/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/posts/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/tags/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/tags/ubuntu/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/</loc><lastmod>2020-03-24T20:33:55&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://huhulaoxian.github.io/categories/conda/</loc><lastmod>2020-03-24T17:01:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/tags/conda/</loc><lastmod>2020-03-24T17:01:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://huhulaoxian.github.io/categories/conda/</loc><lastmod>2020-03-24T17:01:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/conda_base/</loc><lastmod>2020-03-24T17:01:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/conda_source/</loc><lastmod>2020-03-24T16:50:48&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/categories/linux/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/nvidia_driver/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/tags/linux/</loc><lastmod>2020-03-24T13:39:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/ubuntu_install/</loc><lastmod>2020-03-24T13:39:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://huhulaoxian.github.io/tags/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/categories/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://huhulaoxian.github.io/tags/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/docker_command/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/tags/pycharm/</loc><lastmod>2020-03-24T01:11:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/pycharm_docker/</loc><lastmod>2020-03-24T01:11:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

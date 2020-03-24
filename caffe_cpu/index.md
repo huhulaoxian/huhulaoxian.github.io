@@ -59,9 +59,11 @@ import caffe
 ~~~shell
 vim ~/.bashrc
 ~~~
+
 {{% admonition "tip" "小贴士" %}}
 vim编辑器用不习惯的话，可以使用`gedit`编辑器
 {{% /admonition %}}
+
 最后一行加上
 ~~~
 export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
