@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 01:11:47 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 01:11:47 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/tags/pycharm/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Pycharm远程调试Docker</title>
       <link>http://huhulaoxian.github.io/pycharm_docker/</link>
-      <pubDate>Tue, 24 Mar 2020 01:11:47 +0800</pubDate>
+      <pubDate>Mon, 24 Feb 2020 01:11:47 +0800</pubDate>
       
       <guid>http://huhulaoxian.github.io/pycharm_docker/</guid>
       <description>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。 准备 Ubuntu 16.04(远程服务器) Mac或Ubuntu(本地) docker(远程</description>
