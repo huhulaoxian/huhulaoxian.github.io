@@ -18,7 +18,7 @@
       <pubDate>Tue, 24 Mar 2020 01:11:47 +0800</pubDate>
       
       <guid>http://huhulaoxian.github.io/zh-cn/pycharm_docker/</guid>
-      <description>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。 ##准备 Ubuntu 16.04(远程服务器) Mac或Ubuntu(本地) docker(</description>
+      <description>使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。 准备 Ubuntu 16.04(远程服务器) Mac或Ubuntu(本地) docker(远程</description>
     </item>
     
   </channel>

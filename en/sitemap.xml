@@ -2,39 +2,39 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://huhulaoxian.github.io/about/</loc><lastmod>2020-03-06T18:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://huhulaoxian.github.io/about/</loc><lastmod>2020-03-06T18:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://huhulaoxian.github.io/zh-cn/about/"
+                        href="http://huhulaoxian.github.io/zh-cn/about/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://huhulaoxian.github.io/about/"
+                    href="http://huhulaoxian.github.io/about/"
                     /></url><url>
-            <loc>https://huhulaoxian.github.io/</loc><lastmod>2020-03-06T18:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://huhulaoxian.github.io/</loc><lastmod>2020-03-06T18:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://huhulaoxian.github.io/zh-cn/"
+                        href="http://huhulaoxian.github.io/zh-cn/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://huhulaoxian.github.io/"
+                    href="http://huhulaoxian.github.io/"
                     /></url><url>
-            <loc>https://huhulaoxian.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://huhulaoxian.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://huhulaoxian.github.io/zh-cn/categories/"
+                        href="http://huhulaoxian.github.io/zh-cn/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://huhulaoxian.github.io/categories/"
+                    href="http://huhulaoxian.github.io/categories/"
                     /></url><url>
-            <loc>https://huhulaoxian.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://huhulaoxian.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://huhulaoxian.github.io/zh-cn/tags/"
+                        href="http://huhulaoxian.github.io/zh-cn/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="https://huhulaoxian.github.io/tags/"
+                    href="http://huhulaoxian.github.io/tags/"
                     /></url></urlset>
