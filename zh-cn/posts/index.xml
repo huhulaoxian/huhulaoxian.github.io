@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 24 Mar 2020 11:59:49 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 13:47:07 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nvidia_driver</title>
+      <link>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</link>
+      <pubDate>Tue, 24 Mar 2020 13:47:07 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</guid>
+      <description>&lt;p&gt;本文介绍了ubuntu通过英伟达官网安装显卡驱动的方法，当然也可以使用ubuntu图形界面中的“软件和更新”进行安装，但是不推荐&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu_install</title>
+      <link>http://huhulaoxian.github.io/zh-cn/ubuntu_install/</link>
+      <pubDate>Tue, 24 Mar 2020 13:39:14 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/zh-cn/ubuntu_install/</guid>
+      <description>&lt;p&gt;本文记录了 win10 安装 ubuntu 双系统的注意事项,主要针对以UEFI方式启动系统的电脑。关于UEFI和EFI自己查询&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Docker常用命令及注意事项</title>
@@ -18,7 +36,7 @@
       <pubDate>Tue, 24 Mar 2020 11:59:49 +0800</pubDate>
       
       <guid>http://huhulaoxian.github.io/zh-cn/docker_command/</guid>
-      <description>Docker的常用命令 服务相关： 启动 1 systemctl start docker 停止 1 systemctl stop docker 查看状态 1 systemctl status docker 重启 1 systemctl restart docker 设置开机启动 1 systemctl enable docker 镜像相关： 查看镜像 1 docker images 列出所有镜像</description>
+      <description>&lt;p&gt;本文介绍了Docker的常用命令，以及注意事项，可能会不断更新&lt;/p&gt;</description>
     </item>
     
     <item>
