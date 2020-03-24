@@ -37,7 +37,7 @@
                 "url": "http:\/\/huhulaoxian.github.io\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  891 ,
+            },"genre": "posts","keywords": "ubuntu, Caffe","wordcount":  887 ,
         "url": "http:\/\/huhulaoxian.github.io\/caffe_cpu\/","datePublished": "2020-03-24T20:33:55\x2b08:00","dateModified": "2020-03-24T20:33:55\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -99,7 +99,7 @@
                                 </a>
                             </span></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-24>2020-03-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>约 891 字&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 887 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
         </div><div class="toc" id="toc-auto">
                 <h2 class="toc-title">目录</h2>
@@ -118,6 +118,9 @@
     <li><a href="#安装依赖">安装依赖</a></li>
     <li><a href="#配置makefileconfig">配置makefile.config</a></li>
     <li><a href="#编辑makefile文件">编辑Makefile文件</a></li>
+    <li><a href="#make编译caffe">make编译caffe</a></li>
+    <li><a href="#编译python接口使用python调用caffe框架">编译python接口（使用python调用caffe框架）</a></li>
+    <li><a href="#导入caffe">导入caffe</a></li>
   </ul>
 </nav></div>
                 </details>
@@ -197,7 +200,7 @@ LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu 
 <p>很多教程都没有这一步，甚至是官方文档，也许这也是caffe较难安装的原因吧。
 将：<code>LIBRARIES += glog gflags protobuf boost_system boost_filesystem m</code>
 改为：<code>LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial</code></p>
-<h1 id="make编译caffe">make编译caffe</h1>
+<h2 id="make编译caffe">make编译caffe</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -210,7 +213,7 @@ make <span class="nb">test</span>
 make runtest
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="编译python接口如果想用python调用caffe框架的话">编译python接口（如果想用python调用caffe框架的话）</h1>
+</div><h2 id="编译python接口使用python调用caffe框架">编译python接口（使用python调用caffe框架）</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -221,7 +224,7 @@ make runtest
 </div>
 </div><div class="admonition warning"><p class="admonition-title"><i class="icon fas fa-exclamation-triangle"></i>注意</p><div class="admonition-content">编译失败重新编译时，需要<code>make clean</code></div>
         </div>
-<h1 id="导入caffe">导入caffe</h1>
+<h2 id="导入caffe">导入caffe</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -250,7 +253,7 @@ export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
 ~~~shell
 source ~/.bashrc
 ~~~
-# MNIST数据集测试
+## MNIST数据集测试
 配置caffe完成后，我们可以利用MNIST数据集对caffe进行测试，过程如下：
 1. 将终端定位到Caffe根目录（一定要在caffa的根目录下执行以下命令，否则会出现有些文件找不到的情况）
 ~~~

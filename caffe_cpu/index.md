@@ -36,13 +36,13 @@ LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu 
 很多教程都没有这一步，甚至是官方文档，也许这也是caffe较难安装的原因吧。
 将：`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`
 改为：`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial`
-# make编译caffe
+## make编译caffe
 ~~~shell
 make all -j8  #j8可以同时使用8个线程编译，加快编译速度
 make test
 make runtest
 ~~~
-# 编译python接口（如果想用python调用caffe框架的话）
+## 编译python接口（使用python调用caffe框架）
 ~~~shell
 make pycaffe
 ~~~
@@ -51,7 +51,7 @@ make pycaffe
 编译失败重新编译时，需要`make clean`
 {{% /admonition %}}
 
-# 导入caffe
+## 导入caffe
 ~~~
 import caffe 
 ~~~
@@ -71,7 +71,7 @@ export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
 ~~~shell
 source ~/.bashrc
 ~~~
-# MNIST数据集测试
+## MNIST数据集测试
 配置caffe完成后，我们可以利用MNIST数据集对caffe进行测试，过程如下：
 1. 将终端定位到Caffe根目录（一定要在caffa的根目录下执行以下命令，否则会出现有些文件找不到的情况）
 ~~~
