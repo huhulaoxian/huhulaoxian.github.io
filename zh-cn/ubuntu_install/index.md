@@ -1,4 +1,4 @@
-# Ubuntu_install
+# win10 + ubuntu双系统安装注意事项
 
 
 本文记录了 win10 安装 ubuntu 双系统的注意事项,主要针对以UEFI方式启动系统的电脑。关于UEFI和EFI自己查询

@@ -13,7 +13,6 @@
                     /></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/categories/linux/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/tags/linux/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/posts/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/tags/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
@@ -25,6 +24,7 @@
                     href="http://huhulaoxian.github.io/zh-cn/tags/"
                     /></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/tags/ubuntu/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://huhulaoxian.github.io/zh-cn/nvidia_driver/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/</loc><lastmod>2020-03-24T13:47:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -35,8 +35,8 @@
                     href="http://huhulaoxian.github.io/zh-cn/"
                     /></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/ubuntu_install/</loc><lastmod>2020-03-24T13:39:14&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://huhulaoxian.github.io/zh-cn/categories/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/tags/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://huhulaoxian.github.io/zh-cn/categories/docker/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/docker_command/</loc><lastmod>2020-03-24T11:59:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/tags/pycharm/</loc><lastmod>2020-03-24T01:11:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://huhulaoxian.github.io/zh-cn/pycharm_docker/</loc><lastmod>2020-03-24T01:11:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

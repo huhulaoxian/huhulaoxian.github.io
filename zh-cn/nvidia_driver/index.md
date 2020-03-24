@@ -1,4 +1,4 @@
-# Nvidia_driver
+# Ubuntu下Nvidia显卡驱动安装
 
 本文介绍了ubuntu通过英伟达官网安装显卡驱动的方法，当然也可以使用ubuntu图形界面中的“软件和更新”进行安装，但是不推荐
 <!--more-->
