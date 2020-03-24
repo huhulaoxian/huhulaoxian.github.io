@@ -1,4 +1,4 @@
-# Caffe(cpu) ubuntu安装
+# Caffe(gpu) ubuntu安装
 
 GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教程，然后再编译gpu版本，会轻松一点。[Caffe(cpu版) Ubuntu安装](https://huhulaoxian.xyz/caffe_cpu/)
 <!--more-->
