@@ -1,4 +1,4 @@
-# Conda_base
+# Conda的常用命令
 
 本文介绍了conda的基本操作命令，conda的api写的非常完整，有不明白的命令，直接在终端输入`conda 'command' --help`就能看到该命令的详细介绍
 <!--more-->
@@ -9,7 +9,7 @@ conda info --envs
 ~~~
 * 创建新环境
 ~~~shell
-conda create --name env-name python=3.5
+conda create --name env-name python=3.7
 ~~~
 * 激活新环境
 ~~~shell

@@ -1,4 +1,4 @@
-# Conda_source
+# Conda更换清华镜像
 
 conda的默认下载源服务器应该在国外，在线安装包有时会很慢，换成清华的镜像会好很多，换源的方法[清华镜像源官网](https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/)写的非常清楚
 
