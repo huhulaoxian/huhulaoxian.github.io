@@ -35,7 +35,7 @@ docker run -id -p 8022:22 --name container_name -v 宿主机目录:容器目录 
 ~~~shell
 $ apt update && apt install openssh-server
 ~~~
-{{% admonition "tip" "注意" %}}
+{{% admonition "warning" "注意" %}}
 这里注意，不仅仅是远程服务器上要安装ssh服务，同时远程服务器上的docker container也内也需要安装openssh-server。
 {{% /admonition %}}
 
@@ -72,7 +72,7 @@ $ ssh root@<你服务器的ip地址> -p 8022
 # 密码就是刚刚重新设置的
 ~~~
 如果能够链接成功到docker container就完成了此次ssh的配置。
-{{% admonition "tip" "注意" %}}
+{{% admonition "warning" "注意" %}}
 如果失败请按以下顺序检查
 {{% /admonition %}}
 
@@ -91,35 +91,38 @@ Pycharm链接远程docker container(文件同步)
 ### 配置SFTP
 在导航栏中 Tools>Depolyment>Configuration中添加配置SFTP。
 如图
-![Local Picture](/images/Apple-Devices-Preview.png)
+![Local Picture](/images/pycharm_docker/1.png)
 添加配置SFTP，点击弹窗左上角的+号。选择SFTP，根据自己的实际情况进行配置。
-![Local Picture](/images/Apple-Devices-Preview.png)
+![Local Picture](/images/pycharm_docker/2.png)
 PS：这里的root密码就是之前设置好的test
 ### 配置SFTP中的mapping
+![Local Picture](/images/pycharm_docker/3.png)
 都配置完之后。打开自动上传功能
 Tools>Depolyment>Automatic Upload(always)
 本地修改好代码只要按保存键就自动将本地代码上传至远程docker container中。
 到这里已经配置好代码的自动同步了。还差最后一步，远程调试就配置成功。
 ### Pycharm链接远程docker container (配置远程编译器)
 打开Pycharm专业版的配置
+![Local Picture](/images/pycharm_docker/4.png)
 添加新编译器(远程docker container编译器)
+![Local Picture](/images/pycharm_docker/5.png)
 在打开的页面选择之前配置好的SFTP
-
-{{% admonition "tip" "注意" %}}
+![Local Picture](/images/pycharm_docker/6.png)
+{{% admonition "tip" "选择" %}}
 通常选择完之后羡慕有两个选项
 Create: 新建SFTP
 Move: 将选择的SFTP作为编译器的SFTP
 通常选择Move就好
 {{% /admonition %}}
 
-
+![Local Picture](/images/pycharm_docker/7.png)
 最后配置docker container的编译器位置，还有项目位置的映射。
 完成这一步就彻底搞定Pycharm远程调试Docker container
 只要在调试的时候，选择新建的远程调试编译器就好
 
 
 
-本文参考至：
+## 本文参考至：
 [PyCharm+Docker：打造最舒适的深度学习炼丹炉](https://zhuanlan.zhihu.com/p/52827335)
 [pycharm远程调试docker containers](https://www.cnblogs.com/ruiyang-/p/10158658.html)
 
