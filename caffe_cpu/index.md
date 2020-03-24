@@ -69,7 +69,7 @@ vim编辑器用不习惯的话，可以使用`gedit`编辑器
 export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
 ~~~
 这里的路径写上你自己的路径
-然后更新以下`bashrc`
+然后更新一下`bashrc`
 ~~~shell
 source ~/.bashrc
 ~~~

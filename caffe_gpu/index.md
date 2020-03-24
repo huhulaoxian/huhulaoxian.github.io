@@ -5,7 +5,8 @@ GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教
 
 接下来进入正题
 ## 下载安装nvidia驱动
-~~图形界面的ubuntu，直接在设置里的软件和更新里搜索并安装英伟达显卡驱动~~
+~~图形界面的ubuntu，直接在设置里的软件和更新里搜索并安装英伟达显卡驱动~~ 
+
 不推荐以上方法安装，ubuntu推荐的显卡驱动并不是最新版，后续安装cuda或其他框架时会对显卡驱动版本有要求，所以推荐使用[这篇文章](https://huhulaoxian.xyz/nvidia_driver/)中的方法正确安装驱动，此处不具体介绍。
 ## 安装cuda
 caffe官方推荐ubuntu16.04安装cuda8.0，英伟达cuda官网下载8.0版本
@@ -45,12 +46,15 @@ sudo tar -zxvf ./cudnn-8.0-linux-x64-v6.0.tgz
 得到一个 cuda 文件夹，该文件夹下`include`和 `lib64` 两个文件夹，命令行进入 `cuda/include` 路径下，然后进行以下操作：
 ~~~shell
 sudo cp cudnn.h /usr/local/cuda/include/ #复制头文件
+~~~
+
 然后命令行进入 cudn/lib64 路径下，运行以下命令：
+~~~shell
 sudo cp lib* /usr/local/cuda/lib64/ #复制动态链接库
 sudo ln -sf libcudnn.so.6.0.21 libcudnn.so.6 #生成软衔接
 sudo ln -sf libcudnn.so.6 libcudnn.so #生成软链接
 ~~~
-安装完成后可用 nvcc -V 命令验证是否安装成功，若出现以下信息则表示安装成功：
+安装完成后可用 `nvcc -V` 命令验证是否安装成功，若出现以下信息则表示安装成功：
 ![/images/caffe_gpu/1.png]
 
 ## 配置makefile.config
@@ -76,12 +80,13 @@ PYTHON_INCLUDE := $(ANACONDA_HOME)/include \
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/hdf5/serial 
 ~~~
 * caffe下的Makefile修改地方
-将：`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`
+  
+将：`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m`  
 改为：
-`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial`
+`LIBRARIES += glog gflags protobuf boost_system boost_filesystem m hdf5_serial_hl hdf5_serial`  
 将：
-`NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)`
-替换为：
+`NVCCFLAGS +=-ccbin=$(CXX) -Xcompiler-fPIC $(COMMON_FLAGS)` 
+替换为： 
 `NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS)`
 
 * 编辑`/usr/local/cuda/include/host_config.h`
@@ -128,7 +133,7 @@ vim编辑器用不习惯的话，可以使用`gedit`编辑器
 export PYTHONPATH="/home/yaoting/caffe/python:$PYTHONPATH"
 ~~~
 这里的路径写上你自己的路径
-然后更新以下`bashrc`
+然后更新一下`bashrc`
 ~~~shell
 source ~/.bashrc
 ~~~
@@ -152,5 +157,6 @@ cd ~/caffe
 ~~~
 
 ## 结尾
-安装完caffe简单说俩句，caffe这个深度学习框架上手非常容易，但是安装极难（起码我是这么认为）。较之Tensorflow，Pytorch等框架，caffe组织结构更加清晰，易用性更高，但是存在安装编译困难（我认为如果能装好caffe，其他框架的安装就是小儿科了）、更新慢（貌似现在已经不更新了，作为老一代深度学习框架，感觉它即将退出历史舞台）、不灵活等缺陷，例如想修改或增加某些新的层，需要修改c++源码，对于新手或没接触过c++的人来说很不友好。
+Caffe这个深度学习框架上手非常容易，但是安装极难（起码我是这么认为）。较之Tensorflow，Pytorch等框架，caffe组织结构更加清晰，易用性更高，但是存在安装编译困难（我认为如果能装好Caffe，其他框架的安装就是小儿科了）、更新慢（貌似现在已经不更新了，作为老一代深度学习框架，感觉它即将退出历史舞台）、不灵活等缺陷，例如想修改或增加某些新的层，需要修改C++源码，对于新手或没接触过C++的人来说很不友好  
+
 好了，现在可以尝试着将caffe源码中的`example`都跑一下试试看了～
