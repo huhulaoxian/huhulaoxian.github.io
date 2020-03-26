@@ -22,15 +22,6 @@
     </item>
     
     <item>
-      <title>Pycharm远程调试Docker</title>
-      <link>http://huhulaoxian.github.io/pycharm_docker/</link>
-      <pubDate>Mon, 24 Feb 2020 01:11:47 +0800</pubDate>
-      
-      <guid>http://huhulaoxian.github.io/pycharm_docker/</guid>
-      <description>&lt;p&gt;使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Docker常用命令及注意事项</title>
       <link>http://huhulaoxian.github.io/docker_command/</link>
       <pubDate>Thu, 14 Mar 2019 11:59:49 +0800</pubDate>

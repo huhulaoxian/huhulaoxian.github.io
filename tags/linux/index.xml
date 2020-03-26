@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 24 Aug 2019 13:39:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2020 01:11:47 +0800</lastBuildDate>
     
 	<atom:link href="http://huhulaoxian.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pycharm远程调试Docker</title>
+      <link>http://huhulaoxian.github.io/pycharm_docker/</link>
+      <pubDate>Mon, 24 Feb 2020 01:11:47 +0800</pubDate>
+      
+      <guid>http://huhulaoxian.github.io/pycharm_docker/</guid>
+      <description>&lt;p&gt;使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>win10 &#43; ubuntu双系统安装注意事项</title>
