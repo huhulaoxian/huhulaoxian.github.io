@@ -2,31 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on 虎虎老仙</title>
-    <link>http://huhulaoxian.github.io/categories/docker/</link>
+    <link>/categories/docker/</link>
     <description>Recent content in Docker on 虎虎老仙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Thu, 26 Mar 2020 18:16:12 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 11:59:49 +0800</lastBuildDate>
     
-	<atom:link href="http://huhulaoxian.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Liunx常用解压缩命令</title>
-      <link>http://huhulaoxian.github.io/zip/</link>
-      <pubDate>Thu, 26 Mar 2020 18:16:12 +0800</pubDate>
-      
-      <guid>http://huhulaoxian.github.io/zip/</guid>
-      <description>&lt;p&gt;本文介绍了一些linux环境下常用的解压缩命令，linux环境下，每个压缩格式的打包和压缩的命令都不相同，咱又记不住每次都要问度娘，特此记录。&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Docker常用命令及注意事项</title>
-      <link>http://huhulaoxian.github.io/docker_command/</link>
+      <link>/docker_command/</link>
       <pubDate>Thu, 14 Mar 2019 11:59:49 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/docker_command/</guid>
+      <guid>/docker_command/</guid>
       <description>&lt;p&gt;本文介绍了Docker的常用命令，以及注意事项，可能会不断更新&lt;/p&gt;</description>
     </item>
     

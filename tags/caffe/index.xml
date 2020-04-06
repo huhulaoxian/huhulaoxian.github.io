@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Caffe on 虎虎老仙</title>
-    <link>http://huhulaoxian.github.io/tags/caffe/</link>
+    <link>/tags/caffe/</link>
     <description>Recent content in Caffe on 虎虎老仙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Thu, 26 Sep 2019 20:34:00 +0800</lastBuildDate>
     
-	<atom:link href="http://huhulaoxian.github.io/tags/caffe/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/caffe/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Caffe(gpu) ubuntu安装</title>
-      <link>http://huhulaoxian.github.io/caffe_gpu/</link>
+      <link>/caffe_gpu/</link>
       <pubDate>Thu, 26 Sep 2019 20:34:00 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/caffe_gpu/</guid>
+      <guid>/caffe_gpu/</guid>
       <description>&lt;p&gt;GPU版本的caffe安装过程比cpu复杂一些，建议现看cpu版本安装教程，然后再编译gpu版本，会轻松一点。&lt;a href=&#34;https://huhulaoxian.xyz/caffe_cpu/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Caffe(cpu版) Ubuntu安装&lt;/a&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Caffe(cpu) ubuntu安装</title>
-      <link>http://huhulaoxian.github.io/caffe_cpu/</link>
+      <link>/caffe_cpu/</link>
       <pubDate>Wed, 25 Sep 2019 20:33:55 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/caffe_cpu/</guid>
+      <guid>/caffe_cpu/</guid>
       <description>&lt;p&gt;如果科研过程中需要用到前辈的caffe框架的源码，一定需要重新编译源码中的caffe框架，通常只要作者开放源码，其中一定会包含他们编译修改过的caffe文件。所以caffe框架的安装将是整个复现过程中最难的部分。&lt;/p&gt;</description>
     </item>
     

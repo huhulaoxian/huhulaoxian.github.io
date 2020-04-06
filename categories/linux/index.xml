@@ -2,40 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 虎虎老仙</title>
-    <link>http://huhulaoxian.github.io/categories/linux/</link>
+    <link>/categories/linux/</link>
     <description>Recent content in Linux on 虎虎老仙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 24 Feb 2020 01:11:47 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 18:16:12 +0800</lastBuildDate>
     
-	<atom:link href="http://huhulaoxian.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Liunx常用解压缩命令</title>
+      <link>/zip/</link>
+      <pubDate>Thu, 26 Mar 2020 18:16:12 +0800</pubDate>
+      
+      <guid>/zip/</guid>
+      <description>&lt;p&gt;本文介绍了一些linux环境下常用的解压缩命令，linux环境下，每个压缩格式的打包和压缩的命令都不相同，咱又记不住每次都要问度娘，特此记录。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Pycharm远程调试Docker</title>
-      <link>http://huhulaoxian.github.io/pycharm_docker/</link>
+      <link>/pycharm_docker/</link>
       <pubDate>Mon, 24 Feb 2020 01:11:47 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/pycharm_docker/</guid>
+      <guid>/pycharm_docker/</guid>
       <description>&lt;p&gt;使用学校集群跑深度学习代码，终端连接调试过于繁琐，所以有了本文。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ubuntu下Nvidia显卡驱动安装</title>
-      <link>http://huhulaoxian.github.io/nvidia_driver/</link>
+      <link>/nvidia_driver/</link>
       <pubDate>Tue, 24 Sep 2019 13:47:07 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/nvidia_driver/</guid>
+      <guid>/nvidia_driver/</guid>
       <description>&lt;p&gt;本文介绍了ubuntu通过英伟达官网安装显卡驱动的方法，当然也可以使用ubuntu图形界面中的“软件和更新”进行安装，但是不推荐&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>win10 &#43; ubuntu双系统安装注意事项</title>
-      <link>http://huhulaoxian.github.io/ubuntu_install/</link>
+      <link>/ubuntu_install/</link>
       <pubDate>Sat, 24 Aug 2019 13:39:14 +0800</pubDate>
       
-      <guid>http://huhulaoxian.github.io/ubuntu_install/</guid>
+      <guid>/ubuntu_install/</guid>
       <description>&lt;p&gt;本文记录了 win10 安装 ubuntu 双系统的注意事项,主要针对以UEFI方式启动系统的电脑。关于UEFI和EFI自己查询&lt;/p&gt;</description>
     </item>
     

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Pytorch中图像格式的互相转换 | 虎虎老仙</title>
+        <meta name="Description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"><meta property="og:title" content="Pytorch中图像格式的互相转换" />
+<meta property="og:description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/convert_image_pytorch/" />
+<meta property="article:published_time" content="2020-04-06T16:28:14+08:00" />
+<meta property="article:modified_time" content="2020-04-06T16:28:14+08:00" /><meta property="og:site_name" content="虎虎老仙" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pytorch中图像格式的互相转换"/>
+<meta name="twitter:description" content="本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="/convert_image_pytorch/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="/zip/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.9a680b90260b5106d79f4075491ab31daafa7429eff686453c40b58357309649.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="><link rel="stylesheet" href="/lib/animate/animate.min.3c770e90f98eb21b0c042fafb49755af93306fbaf42e449524f94fae9fc83295.css" integrity="sha256-PHcOkPmOshsMBC&#43;vtJdVr5Mwb7r0LkSVJPlPrp/IMpU="><link rel="stylesheet" href="/css/style.min.314a327b163e6b0d5ce2db67e83d0131cb84acdedde8e77d3cfba921503b70df.css" integrity="sha256-MUoyexY&#43;aw1c4ttn6D0BMcuErN7d6Od9PPupIVA7cN8=">
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pytorch中图像格式的互相转换",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "\/convert_image_pytorch\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Pytorch, Numpy","wordcount":  1128 ,
+        "url": "\/convert_image_pytorch\/","datePublished": "2020-04-06T16:28:14\x2b08:00","dateModified": "2020-04-06T16:28:14\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"description": "本文介绍了caffe（gpu版）深度学习框架在ubuntu系统上的安装"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title animated bounceIn">
+            <a href="/">虎虎老仙</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/">文章</a><a class="menu-item" href="/tags/">标签</a><a class="menu-item" href="/categories/">分类</a><a class="menu-item" href="/about/">关于</a><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title animated bounceIn">
+                <a href="/">虎虎老仙</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a href="javascript:void(0);" class="theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-rotate-180 fa-fw"></i>
+            </a>
+        </div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Pytorch中图像格式的互相转换</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author">
+                    <a class="author" href="/" rel="author" target="_blank">
+                        <i class="fas fa-user-circle fa-fw"></i>虎虎老仙
+                    </a>
+                </span>&nbsp;<span class="post-category">收录于&nbsp;
+                            <span>
+                                <a href="/categories/pytorch">
+                                    <i class="far fa-folder fa-fw"></i>Pytorch
+                                </a>
+                            </span></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-06>2020-04-06</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1128 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#预备知识">预备知识</a></li>
+    <li><a href="#pil与tensor转换">PIL与Tensor转换</a>
+      <ul>
+        <li><a href="#pil转tensor">PIL转Tensor</a></li>
+        <li><a href="#tensor转为pil图片">Tensor转为PIL图片</a></li>
+      </ul>
+    </li>
+    <li><a href="#numpy与tensor">Numpy与Tensor</a>
+      <ul>
+        <li><a href="#numpy转化为tensor">numpy转化为tensor</a></li>
+        <li><a href="#tensor转numpy">tensor转Numpy</a></li>
+      </ul>
+    </li>
+    <li><a href="#pil与numpy">PIL与Numpy</a>
+      <ul>
+        <li><a href="#pil转numpy">PIL转Numpy</a></li>
+        <li><a href="#numpy转pil">Numpy转PIL</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><p>做计算机视觉避免不了的就是图片与张量之间的转换，本文介绍了PIL图像与Pytorch中tensor，以及numpy所读取的opencv图像之间的互相转化</p>
+<h2 id="预备知识">预备知识</h2>
+<p>我们一般在pytorch或者python中处理的图像无非这几种格式：</p>
+<ul>
+<li>PIL.IMAGE：使用python自带图像处理库读取出来的图片格式</li>
+<li>numpy：使用python-opencv库读取出来的图片格式</li>
+<li>tensor：pytorch中训练时所采取的向量格式（当然也可以说图片）
+注意，之后的讲解图片格式皆为RGB三通道，24-bit真彩色，也就是我们平常使用的图片形式</li>
+</ul>
+<h2 id="pil与tensor转换">PIL与Tensor转换</h2>
+<p>PIL.IMAGE是Pytorch官方推荐的图片处理工具，所以理应对他们之间的转换更加方便一些，官方也写好了函数方便转换，调用即可，开始转换之前当然要把他们的包先导入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="kn">as</span> <span class="nn">transforms</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>先来看看这两个互相转换的函数是什么</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># PIL转Tensor</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">(</span><span class="p">[</span>
+    <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(</span><span class="p">)</span><span class="p">]</span><span class="p">)</span>  <span class="c1">#Compose函数是一个形变集合，可以将多个transforms放到一起，顺序执行</span>
+<span class="c1"># 当然你也可以这样写</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(</span><span class="p">)</span>
+<span class="c1"># Tensor转PIL</span>
+<span class="n">unloader</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">ToPILImage</span><span class="p">(</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="pil转tensor">PIL转Tensor</h3>
+<ol>
+<li>使用PIL读取图像</li>
+<li>转换为Tensor</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">RGB</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">loader</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="c1"># 至此图像已经被转换为张量（tensor）</span>
+<span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="p">)</span>
+<span class="c1"># 输出为‘torch.Size([通道数, 高, 宽])’</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tensor转为pil图片">Tensor转为PIL图片</h3>
+<ol>
+<li>输入tensor变量</li>
+<li>输出PIL格式图片</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">image</span> <span class="o">=</span> <span class="n">unloader</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">image</span><span class="o">.</span><span class="n">size</span>  <span class="c1"># 注意PIL的.size函数没有括号</span>
+<span class="c1"># 输出‘(宽, 高)’，注意这里的宽高的顺序与tensor相反</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="numpy与tensor">Numpy与Tensor</h2>
+<p>使用cv2读取出来的图片通常是Numpy格式，需要注意的是用python-opencv读取出来的图片和使用PIL读取出来的图片数据略微不同，主要体现在他的通道排列为BGR，而非主流的RGB，形状为（高,宽,通道数）
+还是先引入包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="numpy转化为tensor">numpy转化为tensor</h3>
+<p>先来看一下cv读取图片后变为np矩阵的形状以及图片转为Tensor后的形状
+np：（高，宽，通道数）
+tensor：（通道数, 高, 宽）
+还要注意cv的默认通道排序是BGR，而非主流的RGB，需要做一个转换，知道这个，下面的代码就好理解了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>  <span class="c1"># COLOR_BGR2RGB 表示转换通道顺序</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="p">)</span><span class="p">)</span>    <span class="c1"># transpose((2, 0, 1)) 表示将（高，宽，通道数）转换为（通道数, 高, 宽）</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">div</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c1"># div表示除255，做归一化</span>
+<span class="c1">#至此np格式的opencv图像便转换为tensor</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tensor转numpy">tensor转Numpy</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">img</span> <span class="o">=</span> <span class="n">tensor</span><span class="o">.</span><span class="n">mul</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span><span class="o">.</span><span class="n">byte</span><span class="p">(</span><span class="p">)</span>    <span class="c1">#mul(255) 表示乘255</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">cpu</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">numpy</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="p">)</span>     <span class="c1"># transpose((1, 2, 0)还原顺序</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pil与numpy">PIL与Numpy</h2>
+<p>PIL.image.size:（宽，高）
+np.shape:（高，宽，通道数）</p>
+<h3 id="pil转numpy">PIL转Numpy</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_url</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="numpy转pil">Numpy转PIL</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">img</span><span class="p">)</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-04-06 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/convert_image_pytorch/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="/convert_image_pytorch/" data-title="Pytorch中图像格式的互相转换" data-ralateuid="2190574095"><i class="fab fa-weibo fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="/convert_image_pytorch/"><i class="fab fa-renren fa-fw"></i>
+</a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="/convert_image_pytorch/" data-title="Pytorch中图像格式的互相转换"><i class="loveit it-baidu-fill"></i>
+</a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="/convert_image_pytorch/" data-title="Pytorch中图像格式的互相转换"><i class="fab fa-evernote fa-fw"></i>
+</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><span>
+                        <a href="/tags/pytorch">
+                            <i class="fas fa-tag fa-fw"></i>Pytorch
+                        </a>
+                    </span>&nbsp;<span>
+                        <a href="/tags/numpy">
+                            <i class="fas fa-tag fa-fw"></i>Numpy
+                        </a>
+                    </span>&nbsp;</section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zip/" class="prev" rel="prev" title="Liunx常用解压缩命令"><i class="fas fa-angle-left fa-fw"></i>Liunx常用解压缩命令</a></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">虎虎老仙</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <span>&nbsp;</span>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },]
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/iconfont/iconfont.min.87733e31cc299c77d28479c59ca286e921fa964f11356559e96012b783b7bb29.css" integrity="sha256-h3M&#43;McwpnHfShHnFnKKG6SH6lk8RNWVZ6WASt4O3uyk="><link rel="stylesheet" href="/lib/katex/katex.min.57c495d8c3b51546fadc1c21b795b1f71e8f54735ad3682ff01807fee1f7ba78.css" integrity="sha256-V8SV2MO1FUb63Bwht5Wx9x6PVHNa02gv8BgH/uH3ung="><link rel="stylesheet" href="/lib/katex/copy-tex.min.bf9ff4137fec38f6255419e142d0883c9c52090885d746f80eee12b273d9b3e0.css" integrity="sha256-v5/0E3/sOPYlVBnhQtCIPJxSCQiF10b4Du4SsnPZs&#43;A="><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.54590077ee163035c3dd38dc034e9f6915ecbe680dd832f449afa21672cab116.js" integrity="sha256-VFkAd&#43;4WMDXD3TjcA06faRXsvmgN2DL0Sa&#43;iFnLKsRY="></script><script src="/lib/sharer/sharer.min.9c88f86c7f0820287113f6236200459832693656e80d7556cc80a93dfbd45813.js" integrity="sha256-nIj4bH8IIChxE/YjYgBFmDJpNlboDXVWzICpPfvUWBM="></script><script src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script src="/js/theme.min.1482fc67bfa2c3b8cebe476d0037b9321b5b7a8a1525b547b94143948be90e9e.js" integrity="sha256-FIL8Z7&#43;iw7jOvkdtADe5MhtbeooVJbVHuUFDlIvpDp4="></script></body>
+</html>
