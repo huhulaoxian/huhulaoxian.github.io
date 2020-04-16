@@ -1,4 +1,4 @@
-# List_tensor_numpy_pytorch
+# Pytorch中List、tensor、numpy相互转换
 
 本文介绍了pytorch中list、numpy、tensor之间的互相转化
 <!--more-->
