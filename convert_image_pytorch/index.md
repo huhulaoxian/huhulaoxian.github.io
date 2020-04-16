@@ -74,9 +74,9 @@ np.shape:（高，宽，通道数）
 ### PIL转Numpy
 ~~~python
 img = Image.open(image_url)
-img = np.array(img)
+np = np.array(img)
 ~~~
 ### Numpy转PIL
 ~~~python
-Image.fromarray(np.uint8(img))
+img = Image.fromarray(np.uint8(np))
 ~~~

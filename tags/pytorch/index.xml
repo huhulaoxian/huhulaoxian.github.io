@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 06 Apr 2020 16:28:14 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 22:17:21 +0800</lastBuildDate>
     
 	<atom:link href="/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>List_tensor_numpy_pytorch</title>
+      <link>/list_tensor_numpy_pytorch/</link>
+      <pubDate>Wed, 15 Apr 2020 22:17:21 +0800</pubDate>
+      
+      <guid>/list_tensor_numpy_pytorch/</guid>
+      <description>&lt;p&gt;本文介绍了pytorch中list、numpy、tensor之间的互相转化&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Pytorch中图像格式的互相转换</title>
