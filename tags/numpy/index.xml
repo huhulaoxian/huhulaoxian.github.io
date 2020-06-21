@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Numpy on 虎虎老仙</title>
-    <link>/tags/numpy/</link>
+    <link>http://huhulaoxian.github.io/tags/numpy/</link>
     <description>Recent content in Numpy on 虎虎老仙</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 06 Apr 2020 16:28:14 +0800</lastBuildDate>
     
-	<atom:link href="/tags/numpy/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://huhulaoxian.github.io/tags/numpy/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Pytorch中图像格式的互相转换</title>
-      <link>/convert_image_pytorch/</link>
+      <link>http://huhulaoxian.github.io/convert_image_pytorch/</link>
       <pubDate>Mon, 06 Apr 2020 16:28:14 +0800</pubDate>
       
-      <guid>/convert_image_pytorch/</guid>
+      <guid>http://huhulaoxian.github.io/convert_image_pytorch/</guid>
       <description>&lt;p&gt;做计算机视觉避免不了的就是图片与张量之间的转换，本文介绍了PIL图像与Pytorch中tensor，以及numpy所读取的opencv图像之间的互相转化&lt;/p&gt;</description>
     </item>
     
