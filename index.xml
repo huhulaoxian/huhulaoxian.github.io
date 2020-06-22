@@ -12,7 +12,7 @@
                 <title>关于 我自己</title>
                 <link>http://huhulaoxian.github.io/about/</link>
                 <pubDate>Fri, 06 Mar 2020 10:54:09 &#43;0800</pubDate><guid>http://huhulaoxian.github.io/about/</guid>
-                <description>&lt;h2 id=&#34;王耀艇&#34;&gt;王耀艇&lt;/h2&gt;
+                <description>&lt;h1 id=&#34;王耀艇&#34;&gt;王耀艇&lt;/h1&gt;
 &lt;h3 id=&#34;fas-fa-user个人信息&#34;&gt;:(fas fa-user):个人信息&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;男，1996年2月，中共党员&lt;/li&gt;
@@ -46,7 +46,7 @@
 &lt;p&gt;&lt;strong&gt;偏斜图像构图预测与美学构图优化&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;PyTorch、CNN、STN&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;课题描述：&lt;/strong&gt; 对图像构图进行分类，并且利用语义线检测方法做图像构图偏斜矫正。用于摄影构图指导。提出一种旋转不变性结构，可方便的加入到CNN网络中，提高模型的旋转不变性。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;课题特点：&lt;/strong&gt; 受STN模型启发，提出旋转不变卷积神经网络，使得模型可以自动调整偏斜图像旋转角度，以适应对应的构图类别。对比baseline，将旋转不变性提高了17%。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;课题特点：&lt;/strong&gt; 受STN模型启发，提出旋转不变卷积神经网络，使得模型可以自动调整偏斜图像旋转角度，以适应对应的构图类别。但直接使用STN对于构图这类全局特征效果不明显，故针对STN网络进行了修改。对比baseline，将旋转不变性提高了17%。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;fas-fa-terminal技能清单&#34;&gt;:(fas fa-terminal):技能清单&lt;/h3&gt;
@@ -55,10 +55,10 @@
 &lt;p&gt;&lt;strong&gt;工具&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;★★★☆  Python、Java、PyTorch&lt;/p&gt;
+&lt;p&gt;★★★☆  Python、Java、PyTorch、Scikit-learn、Linux&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;★★☆☆  C/C++、Caffe、Docker&lt;/p&gt;
+&lt;p&gt;★★☆☆  C/C++、Caffe、Docker、OpenCV、Git&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;★☆☆☆  Matlab&lt;/p&gt;
@@ -67,21 +67,12 @@
 &lt;p&gt;&lt;strong&gt;理论&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;★★★☆  深度学习分类模型、图像特征提取、机器学习方法、特征选择&lt;/p&gt;
+&lt;p&gt;★★★☆  深度学习分类模型、图像特征提取、机器学习算法、特征选择&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;★★☆☆  深度学习检测模型、数据结构、算法&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;★☆☆☆  Matlab&lt;br&gt;
-特征选择方法、深度学习分类模型、SVM、&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;far-fa-heart关于本站&#34;&gt;:(far fa-heart):关于本站&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/dillonzq/LoveIt&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;LoveIt :(far fa-heart):&lt;/a&gt;
- 是一个由 &lt;a href=&#34;https://dillonzq.com&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Dillon&lt;/a&gt;
- 开发的&lt;strong&gt;简洁&lt;/strong&gt;、&lt;strong&gt;优雅&lt;/strong&gt;且&lt;strong&gt;高效&lt;/strong&gt;的 &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Hugo&lt;/a&gt;
- 博客主题。&lt;/p&gt;
 </description>
             </item><item>
                 <title>About LoveIt</title>
