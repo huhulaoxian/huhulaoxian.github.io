@@ -37,7 +37,7 @@
                 "url": "http:\/\/huhulaoxian.github.io\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "page","wordcount":  1054 ,
+            },"genre": "page","wordcount":  1194 ,
         "url": "http:\/\/huhulaoxian.github.io\/about\/","datePublished": "2020-03-06T10:54:09\x2b08:00","dateModified": "2020-03-06T18:06:22\x2b08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
@@ -108,20 +108,28 @@
 <li>
 <p><strong>美天水膜工程设计系统（横向项目）</strong></p>
 <p><em>SpringBoot+Mybatis+Mysql</em></p>
-<p><strong>项目描述：</strong> 用户输入预处理污水数据，系统依据输入数据计算一套污水处理方案（包括膜池大小、膜架数量、膜面积等）并生成项目报告（PDF、Word）。后台管理系统负责用户管理以及膜方案管理等。</p>
-<p><strong>负责模块：</strong> 在项目中负责数据库构建、服务器端接口设计与实现、项目部署等除前端外一切工作</p>
+<p><strong>项目描述：</strong> 用户输入预处理污水数据，系统依据输入数据计算一套污水处理方案（包括膜池大小、膜架数量、膜面积等）并生成项目报告（PDF、Word）。后台管理系统负责用户管理以及膜方案管理等。<br>
+<strong>技术描述：</strong><br>
+1 前后端分离开发模式，接口遵循RESTful规范设计,Jackson序列化/反序列化<br>
+2 数据库构建，严格遵守第三范式、使用索引提高查询效率<br>
+3 依据Word模版使用Poi组件生成Word报告，Docx4J组件将Word转为PDF格式<br>
+4 由于计算公式随时可能调整故使用了策略模式，同时在项目中使用工厂模式等设计模式<br>
+<strong>负责模块：</strong> 数据库设计与实现、接口设计与实现、服务器端搭建以及项目部署</p>
 </li>
 <li>
 <p><strong>合影图像的美学评价</strong></p>
 <p><em>Scikit-learn、SVM、随机森林、CNN、特征提取、特征选择</em></p>
-<p><strong>课题描述：</strong> 利用机器学习方法判别合影图像<strong>美学质量</strong>、利用face++线上人脸分析接口提取合影图像中人物面部状态并设计手工特征（眼睛睁闭，微笑等），再结合传统图像特征，送入分类器中进行美学评价。论文目前在同行评审过程中。</p>
-<p><strong>课题特点：</strong> 目前有关合影美学评价的方法均未能关注到人物的面部状态，同一场景下，人物的不同面部状态对于判别的区分度不高。我们的方法结合了人物面部特征与图像美学特征，使得分类器对于相同场景下的不同人物状态图像的区分度更高，可以应用于连拍后自动选取最美图像。</p>
+<p><strong>课题描述：</strong> 利用机器学习方法判别合影图像<strong>美学质量</strong>、提出针对合影图像的美学特征（眼睛睁闭，微笑等），并结合传统图像特征，使用传统的机器学习分类与回归算法进行合影美学评价任务。论文目前在同行评审过程中。<br>
+<strong>课题特点：</strong></p>
+<ol>
+<li>目前有关合影美学评价的方法均未能关注到人物的面部状态，同一场景下，人物的不同面部状态对于判别的区分度不高。我们的方法结合了人物面部特征与图像美学特征，使得分类器对于相同场景下的不同人物状态图像的区分度更高，可以应用于连拍后自动选取最美图像。</li>
+</ol>
 </li>
 <li>
 <p><strong>偏斜图像构图预测与美学构图优化</strong></p>
 <p><em>PyTorch、CNN、STN</em></p>
-<p><strong>课题描述：</strong> 对图像构图进行分类，并且利用语义线检测方法做图像构图偏斜矫正。用于摄影构图指导。提出一种旋转不变性结构，可方便的加入到CNN网络中，提高模型的旋转不变性。</p>
-<p><strong>课题特点：</strong> 受STN模型启发，提出旋转不变卷积神经网络，使得模型可以自动调整偏斜图像旋转角度，以适应对应的构图类别。但直接使用STN对于构图这类全局特征效果不明显，故针对STN网络进行了修改。对比baseline，将旋转不变性提高了17%。</p>
+<p><strong>课题描述：</strong> 对图像构图进行分类，并且利用语义线检测方法做图像构图偏斜矫正。用于摄影构图指导。提出一种旋转不变性结构，可方便的加入到CNN网络中，提高模型的旋转不变性。<br>
+<strong>课题特点：</strong> 受STN模型启发，提出旋转不变卷积神经网络，使得模型可以自动调整偏斜图像旋转角度，以适应对应的构图类别。但直接使用STN对于构图这类全局特征效果不明显，故针对STN网络进行了修改。对比baseline，将旋转不变性提高了17%。</p>
 </li>
 </ul>
 <h3 id="fas-fa-terminal技能清单"><i class="fas fa-terminal fa-fw"></i>技能清单</h3>
