@@ -1,23 +1,23 @@
-# 关于 我自己
+# 
 
 # 王耀艇
- ### :(fas fa-user):个人信息 
+ ### <i class="fas fa-user"></i> 个人信息 
  - 男，1996年2月，中共党员
  - 软件工程专业硕士 二年级在读
  - 主要研究方向：计算机视觉 计算美学 深度学习
  - 期望岗位：计算机视觉实习生  
-  :(fas fa-phone):152-2216-6323  
-  :(fas fa-envelope):847313442@qq.com
+  <i class="fas fa-phone"></i> 152-2216-6323  
+  <i class="fas fa-envelope"></i> 847313442@qq.com
 ---
-### :(fas fa-book-reader):教育经历
+### <i class="fas fa-book"></i> 教育经历
 
 - 硕士： 天津工业大学，软件工程专业，2018.9-至今
 - 学士： 天津工业大学，软件工程专业，2014.9~2018.7
 - 英语： ***CET4 523 / CET6 465***
 ---
-### :(fas fa-bug):项目经历/研究课题
+### <i class="fas fa-bug"></i> 项目经历/研究课题
 
-- **合影图像的美学评价**
+- **合影图像的美学评价**  
   
   *Scikit-learn、SVM、随机森林、CNN、特征提取、特征选择*
 
@@ -54,7 +54,7 @@
 
   **负责模块：** 数据库设计与实现、接口设计与实现、服务器端搭建以及项目部署
 ---
-### :(fas fa-terminal):技能清单
+### <i class="fas fa-terminal"></i> 技能清单
 - **工具**
 
 - ★★★☆  Python、Java、PyTorch、Scikit-learn、Linux、MacOs
@@ -64,10 +64,15 @@
 - **理论**
 - ★★★☆  深度学习分类任务、图像特征提取、机器学习算法、特征选择
 - ★★☆☆  深度学习检测任务、数据结构、算法
-
-### :(fas fa-gift):奖项荣誉
+---
+### <i class="fas fa-gift"></i> 奖项荣誉
 - 大三 校长三等奖学金
 - 研一 研究生新生二等奖学金 
 - 研二 学业三等奖学金
 - 多次评为优秀党员、优秀团员、优秀团干部
 
+<head> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script> 
+</head> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
