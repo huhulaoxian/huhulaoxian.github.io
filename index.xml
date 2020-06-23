@@ -36,9 +36,9 @@
 &lt;p&gt;&lt;strong&gt;课题描述：&lt;/strong&gt; 利用机器学习方法判别合影图像&lt;strong&gt;美学质量&lt;/strong&gt;、提出针对合影图像的美学特征（眼睛睁闭，微笑等），并结合传统图像特征，使用传统的机器学习分类与回归算法进行合影美学评价任务。论文目前在同行评审过程中。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;课题特点：&lt;/strong&gt;&lt;br&gt;
 1 目前有关合影美学评价的方法均未能关注到人物的面部状态，同一场景下，人物的不同面部状态对于判别的区分度不高。&lt;br&gt;
-2 我们使用Face++和百度AI的人脸分析工具提取合影图像人物信息，在此基础上设计了&lt;strong&gt;7个合影部特征&lt;/strong&gt;并结合50+个图像美学特征，尝试了Filter和Wrapper等&lt;strong&gt;特征选择&lt;/strong&gt;方法，选择出最有利于模型的特征送入SVM中进行训练&lt;br&gt;
-3 使用&lt;strong&gt;随机森林、决策树&lt;/strong&gt;等算法对特征重要性做了分析 ，并证明提出的特征对于合影评价是有效的&lt;br&gt;
-4 使得分类器对于相同场景下的不同人物状态图像的区分度提高90+%，可以应用于连拍后自动选取最美图像。&lt;/p&gt;
+2 我们使用Face++和百度AI的人脸分析接口提取合影人物信息，并设计了&lt;strong&gt;7个合影部特征&lt;/strong&gt;，结合&lt;strong&gt;50+个图像美学特征&lt;/strong&gt;，尝试Filter和Wrapper等&lt;strong&gt;特征选择&lt;/strong&gt;方法进行特征选择并训练SVM模型&lt;br&gt;
+3 使用&lt;strong&gt;随机森林、决策树&lt;/strong&gt;等算法对特征重要性做了分析 ，并证明提出的特征对于合影评价是有效的  &lt;br&gt;
+4 使得分类器对于相同场景下的不同人物状态图像的区分度提高90+%，可以应用于连拍后自动选取最美人物图像。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;偏斜图像构图预测与美学构图优化&lt;/strong&gt;&lt;/p&gt;
